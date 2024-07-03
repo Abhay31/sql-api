@@ -6,10 +6,10 @@ const app = express();
 app.use(bodyParser.json());
 
 const db = mysql.createConnection({
-    host: process.env.DB_HOST,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    database: process.env.DB_NAME
+    host: 'localhost',
+    user: 'root',
+    password: '12345678',
+    database: 'registration'
 });
 
 db.connect(err => {
@@ -64,8 +64,8 @@ app.delete('/api/users/:id', (req, res) => {
 });
 
 
-app.listen(3000, () => {
-    console.log('Server started on port 3000');
+app.listen(8081, () => {
+    console.log(`Server is running on port 8081`);
 });
 
 
